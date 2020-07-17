@@ -1,2 +1,2 @@
-# Data-Structures---Python-
-All impirtant Data Structures for coding in Python 
+# Data-Structures---Python and C++-
+All important Data Structures for coding in Python and C++
