@@ -1,0 +1,44 @@
+//Write a C++ program to find k largest elements in a given array of integers
+
+
+ #include<iostream> 
+
+using namespace std ; 
+
+int main() 
+{ 
+		int array_size ; 
+		cout<<"\nPlease enter the number of elements of the array" ; 
+		cin>>array_size ; 
+		
+		int ApnaArray[array_size] ;
+		
+		cout<<"\nPlease enter the elements of the array" ; 
+		
+		for ( int i = 0 ; i < array_size ; i++ ) 
+		{ 
+			cin>>ApnaArray[i] ; 
+		} 
+		
+		
+		int temp ; 
+		
+		//Sorting in descending order 
+		
+		for ( int j = 0 ; j < array_size ; j++ ) 
+		{ 
+			for ( int i = 0 ; i < array_size-1 ; i++) 
+			{ 
+				if(ApnaArray[i] < ApnaArray[i+1] ) 
+				{ 
+					temp = ApnaArray[i+1]  ; 
+					ApnaArray[i+1] = ApnaArray[i] ; 
+					ApnaArray[i] = temp ; 
+				} 
+			} 
+		} 
+		int k ; 
+		cout<<"\nK for kth largest element" ; 
+		cin>>k ; 
+		cout<<"\nThe kth largest element is"<<ApnaArray[k-1] ; 
+	} 
