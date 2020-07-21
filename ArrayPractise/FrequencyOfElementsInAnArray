@@ -1,0 +1,110 @@
+//Frequency of elements in an array 
+
+ #include<iostream> 
+
+using namespace std ; 
+
+int main() 
+{ 
+		int array_size ; 
+		cout<<"\nPlease enter the number of elements of the array" ; 
+		cin>>array_size ; 
+		
+		int ApnaArray[array_size] ;
+		
+		cout<<"\nPlease enter the elements of the array" ; 
+		
+		for ( int i = 0 ; i < array_size ; i++ ) 
+		{ 
+			cin>>ApnaArray[i] ; 
+		} 
+		
+		
+
+		
+		////Sorting in descending order 
+		
+		//for ( int j = 0 ; j < array_size ; j++ ) 
+		//{ 
+			//for ( int i = 0 ; i < array_size-1 ; i++) 
+			//{ 
+				//if(ApnaArray[i] < ApnaArray[i+1] ) 
+				//{ 
+					//temp = ApnaArray[i+1]  ; 
+					//ApnaArray[i+1] = ApnaArray[i] ; 
+					//ApnaArray[i] = temp ; 
+				//} 
+			//} 
+		//} 
+		
+		int k[array_size][array_size] ; 
+		int count, temp ; 
+		for ( int i = 0 ;  i < array_size ; i++ ) 
+		{ 
+			temp = ApnaArray[i] ; 
+			k[0][i] = ApnaArray[i] ; 
+			count = 0 ; 
+			for ( int j = 0 ; j < array_size ; j++ ) 
+			{   
+				if(temp==ApnaArray[j]) 
+				{ 
+					count++ ; 
+				} 
+			k[1][i] = count ;  
+			} 
+		} 
+		
+		for( int i = 0 ; i < 2 ; i++ ) 
+		{ 
+			for ( int j = 0 ; j < array_size ; j++ ) 
+			{ 
+				cout<<k[i][j]<<"\t" ; 
+			} 
+		cout<<"\n" ; 
+		} 
+		
+		////Most frequently occuring 
+		//int tempo = k[1][0] ; 
+		//int c = i ; 
+		//for ( int i = 0 ; i < array_size ; i++ ) 
+		//{ 
+			//if(k[1][i] > tempo ) 
+				//{ 
+					//temp = k[1][i] ; 
+					//c = i ; 
+				//} 
+		//} 
+		
+		cout<<"\n\n"  		; 
+		//Sorting in descending order 
+		int lulu0 = 0 ; 
+		int lulu1 = 0 ; 
+		
+		for ( int j = 0 ; j < array_size ; j++ ) 
+		{ 
+			for ( int i = 0 ; i < array_size-1 ; i++) 
+			{ 
+				if(k[1][i] < k[1][i+1] ) 
+				{ 
+					lulu1 = k[1][i+1]  ;
+					lulu0 = k[0][i+1]  ;  
+					k[1][i+1] = k[1][i] ; 
+					k[0][i+1] = k[0][i] ;  
+					k[1][i] = lulu1 ; 
+					k[0][i] = lulu0 ;  
+				} 
+			} 
+		} 
+		
+		for( int i = 0 ; i < 2 ; i++ ) 
+		{ 
+			for ( int j = 0 ; j < array_size ; j++ ) 
+			{ 
+				cout<<k[i][j]<<"\t" ; 
+			} 
+		cout<<"\n" ; 
+		} 
+
+ 
+		
+	} 	
