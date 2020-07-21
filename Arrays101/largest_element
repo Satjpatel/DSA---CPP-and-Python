@@ -1,0 +1,41 @@
+//Largest element in a given array 
+//a C++ program to find the largest element of a given array of integers
+#include<iostream> 
+
+using namespace std ; 
+
+int main() 
+{ 
+		int array_size ; 
+		cout<<"\nPlease enter the number of elements of the array" ; 
+		cin>>array_size ; 
+		
+		int ApnaArray[array_size] ;
+		
+		cout<<"\nPlease enter the elements of the array" ; 
+		
+		for ( int i = 0 ; i < array_size ; i++ ) 
+		{ 
+			cin>>ApnaArray[i] ; 
+		} 
+		
+		int temp = ApnaArray[0] ; 
+		
+		for ( int i = 0 ; i < array_size ; i++ ) 
+		{ 
+			if(ApnaArray[i] > temp ) 
+				{ 
+					temp = ApnaArray[i] ; 
+				} 
+		} 
+		
+		cout<<"\nThe largest element is "<<temp ; 
+		
+		
+		
+		
+		
+		return 0 ; 
+	} 
+		
+		
