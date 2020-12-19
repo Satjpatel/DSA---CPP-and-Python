@@ -1,58 +1,47 @@
 #include "iostream"
-
-
 using namespace std ;
 
 
-
-//Swapping Function
-void Swappy(int a, int b)
+void Swappy(int *xp, int *yp)
 {
-	int temp ;
-	temp = a ;
-	a = b ;
-	b = temp ;
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
 }
 
-
-//Selection Sort Function
 void SelectionSort(int arr[], int n)
 {
-	int i, j ;
+    int i, j, Pikachu;
 
-	int Pikachu ; //Pikachu is the assumed min value.
+    // One by one move boundary of unsorted subarray
+    for (i = 0; i < n-1; i++)
+    {
+        // Find the minimum element in unsorted array
+        Pikachu = i;
+        for (j = i+1; j < n; j++)
+        if (arr[j] < arr[Pikachu])
+            Pikachu = j;
 
-  for ( j = 0 ; j < n-1 ; j++)
-  {
-    Pikachu = j ;
-    for( i = j+1 ; i < n ; i++ )
-     {
-       if(arr[i]<arr[Pikachu]) //New Minimum
-          {
-            Pikachu = i;
-
-          }
-       }
-    Swappy(arr[j],arr[Pikachu]) ;
-  }
+        // Swap the found minimum element with the first element
+        Swappy(&arr[Pikachu], &arr[i]);
+    }
 }
-//Utility Function to Print array
-void PrintArray(int arr[], int n)
+
+//Utility Function to Print Array
+void printArray(int arr[], int size)
 {
-	int i ;
-	for (i = 0; i < n; i++)
-		cout<<arr[i]<<" ";
-		cout<<endl ;
+    int i;
+    for (i=0; i < size; i++)
+        cout << arr[i] << " ";
+    cout << endl;
 }
 
-//Driver Code
+// Driver program to test above functions
 int main()
 {
-	int arr[] = {2, 1, 5, 9} ;
-	int n = sizeof(arr)/sizeof(arr[0]);
-
-	SelectionSort(arr, n) ;
-	PrintArray(arr, n) ;
-
-	return 0 ;
+    int arr[] = {1, 2, 12, 122, 11};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    SelectionSort(arr, n);
+    printArray(arr, n);
+    return 0;
 }
