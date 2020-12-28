@@ -11,6 +11,20 @@ void Swappy(int *a, int *b)
 	*b = temp ;
 }
 
+/*
+//Testing Code for Swappy - Swappy Works perfectly ; 
+int main() 
+{ 
+  int a = 9 ; 
+  int b = 2 ; 
+  Swappy(&a, &b) ; 
+  cout<<"a = "<<a<<endl<<"b="<<b<<endl ; 
+
+  return 0 ; 
+}
+*/ 
+
+
 //Function for Merging two Arrays in a sorted manner
 void Merge(int arr[], int lower, int middle, int upper)
 {
@@ -57,8 +71,6 @@ void MergeSort(int arr[], int lower, int upper)
   MergeSort(arr, middle+1, upper) ;
   Merge(arr, lower, middle, upper) ;
 //Divide and conquer baby! The Britishers did this, now its our turn!
-
-
 }
 
 
@@ -71,6 +83,9 @@ void PrintArray(int arr[], int n)
 		cout<<arr[i]<<" ";
 		cout<<endl ;
 }
+
+
+
 
 //Driver Code
 int main()
