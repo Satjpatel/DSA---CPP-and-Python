@@ -66,7 +66,7 @@ void MergeSort(int arr[], int lower, int upper)
   {
     return ;
   }
-  int middle = (lower+upper-1)%2 ;
+  int middle = (lower+upper-1)/2 ; //Changed % to / 
   MergeSort(arr, lower, middle) ;
   MergeSort(arr, middle+1, upper) ;
   Merge(arr, lower, middle, upper) ;
